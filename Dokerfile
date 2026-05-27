@@ -1,0 +1,11 @@
+FROM n8nio/n8n:latest
+
+USER root
+
+# Créer le dossier de données et donner les permissions
+RUN mkdir -p /home/node/.n8n && chown -R node:node /home/node/.n8n
+
+USER node
+
+# Exposer le port par défaut
+EXPOSE 5678
